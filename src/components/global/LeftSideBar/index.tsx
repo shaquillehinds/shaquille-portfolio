@@ -22,11 +22,11 @@ export default function LeftSideBar() {
       </div>
       <img className="me" src="./assets/images/me.png" alt="Me" />
       <h2>Shaquille Hinds</h2>
-      <h2 className="address"> Based in Bridgetown, Barbados </h2>
+      <p className="address"> Based in Bridgetown, Barbados 🇧🇧</p>
       <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
         {socials.map((link) => (
           <li key={link.href}>
-            <a href={link.href}>
+            <a href={link.href} target="_blank">
               <i className={link.className}> </i>
             </a>
           </li>
