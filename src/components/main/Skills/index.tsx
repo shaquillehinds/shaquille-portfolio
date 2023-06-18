@@ -13,10 +13,10 @@ interface Skill {
 const skills: Skill[] = [
   {
     name: "Typescript",
-    percent: 90,
+    percent: 95,
     imageSrc: "/assets/images/typescript.svg",
   },
-  { name: "React", percent: 90, icon: "lab la-react" },
+  { name: "React", percent: 98, icon: "lab la-react" },
   {
     name: "NestJS",
     percent: 90,
@@ -24,15 +24,15 @@ const skills: Skill[] = [
   },
   {
     name: "MongoDB",
-    percent: 90,
+    percent: 85,
     imageSrc: "/assets/images/mongo.svg",
   },
   { name: "Figma", percent: 92, icon: "lab la-figma" },
   // { name: "NodeJS", percent: 80, icon: "lab la-node-js" },
 
-  { name: "Git", percent: 90, icon: "lab la-git" },
-  { name: "Linux", percent: 90, icon: "lab la-linux" },
-  { name: "Docker", percent: 90, icon: "lab la-docker" },
+  { name: "Git", percent: 92, icon: "lab la-git" },
+  { name: "Linux", percent: 85, icon: "lab la-linux" },
+  { name: "Docker", percent: 80, icon: "lab la-docker" },
 ];
 
 export default function Skills() {
@@ -57,7 +57,15 @@ export default function Skills() {
             {skills.map((skill, i) => (
               <div
                 className="col-md-3 scroll-animation"
-                data-aos={`fade-${i % 2 === 0 ? "right" : "left"}`}
+                data-aos={`fade-${
+                  i % 4 === 0
+                    ? "right"
+                    : i % 4 === 1
+                    ? "up"
+                    : i % 4 === 2
+                    ? "down"
+                    : "left"
+                }`}
               >
                 <div className="skill">
                   <div className="skill-inner">
