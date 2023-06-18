@@ -3,6 +3,38 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./styles.scss";
 
+interface Skill {
+  name: string;
+  percent: number;
+  imageSrc?: string;
+  icon?: string;
+}
+
+const skills: Skill[] = [
+  {
+    name: "Typescript",
+    percent: 90,
+    imageSrc: "/assets/images/typescript.svg",
+  },
+  { name: "React", percent: 90, icon: "lab la-react" },
+  {
+    name: "NestJS",
+    percent: 90,
+    imageSrc: "/assets/images/nest.svg",
+  },
+  {
+    name: "MongoDB",
+    percent: 90,
+    imageSrc: "/assets/images/mongo.svg",
+  },
+  { name: "Figma", percent: 92, icon: "lab la-figma" },
+  // { name: "NodeJS", percent: 80, icon: "lab la-node-js" },
+
+  { name: "Git", percent: 90, icon: "lab la-git" },
+  { name: "Linux", percent: 90, icon: "lab la-linux" },
+  { name: "Docker", percent: 90, icon: "lab la-docker" },
+];
+
 export default function Skills() {
   useEffect(() => {
     AOS.init({
@@ -22,60 +54,20 @@ export default function Skills() {
             </h1>
           </div>
           <div className="row skills text-center">
-            <div className="col-md-3 scroll-animation" data-aos="fade-right">
-              <div className="skill">
-                <div className="skill-inner">
-                  <img src="../assets/images/figma.png" alt="Figma" />
-                  <h1 className="percent"> 92 % </h1>
+            {skills.map((skill, i) => (
+              <div className="col-md-3 scroll-animation" data-aos="fade-up">
+                <div className="skill">
+                  <div className="skill-inner">
+                    {skill.imageSrc && (
+                      <img src={skill.imageSrc} alt="Laravel/PHP" />
+                    )}
+                    <i className={skill.icon}> </i>
+                    <h1 className="percent"> {skill.percent}% </h1>
+                  </div>
+                  <p className="name"> {skill.name} </p>
                 </div>
-                <p className="name"> Figma </p>
               </div>
-            </div>
-            <div className="col-md-3 scroll-animation" data-aos="fade-up">
-              <div className="skill">
-                <div className="skill-inner">
-                  <img src="../assets/images/framer.png" alt="Framer" />
-                  <h1 className="percent"> 85 % </h1>
-                </div>
-                <p className="name"> Framer </p>
-              </div>
-            </div>
-            <div className="col-md-3 scroll-animation" data-aos="fade-down">
-              <div className="skill">
-                <div className="skill-inner">
-                  <img src="../assets/images/webflow.png" alt="Webflow" />
-                  <h1 className="percent"> 80 % </h1>
-                </div>
-                <p className="name"> Webflow </p>
-              </div>
-            </div>
-            <div className="col-md-3 scroll-animation" data-aos="fade-left">
-              <div className="skill">
-                <div className="skill-inner">
-                  <img src="../assets/images/react.png" alt="React" />
-                  <h1 className="percent"> 90 % </h1>
-                </div>
-                <p className="name"> React </p>
-              </div>
-            </div>
-            <div className="col-md-3 scroll-animation" data-aos="fade-right">
-              <div className="skill">
-                <div className="skill-inner">
-                  <img src="../assets/images/wordpress.png" alt="WordPress" />
-                  <h1 className="percent"> 86 % </h1>
-                </div>
-                <p className="name"> WordPress </p>
-              </div>
-            </div>
-            <div className="col-md-3 scroll-animation" data-aos="fade-up">
-              <div className="skill">
-                <div className="skill-inner">
-                  <img src="../assets/images/laravel.png" alt="Laravel/PHP" />
-                  <h1 className="percent"> 70 % </h1>
-                </div>
-                <p className="name"> Laravel / PHP </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

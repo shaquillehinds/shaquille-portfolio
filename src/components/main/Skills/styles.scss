@@ -13,9 +13,15 @@
       padding: 54px 0 48px 0;
       margin-bottom: 20px;
       transition: 0.3s;
+      i {
+        font-size: 75px;
+        color: v.$color_4;
+        margin-bottom: 15px;
+      }
       img {
         display: block;
         margin: auto auto 29px auto;
+        width: 60px;
       }
       h1 {
         font-size: 30px;
