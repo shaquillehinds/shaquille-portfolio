@@ -3,6 +3,38 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./styles.scss";
 
+interface Experience {
+  position: string;
+  company: string;
+  years: {
+    start: string;
+    end: string;
+  };
+}
+
+const experiences: Experience[] = [
+  {
+    position: "Founder & Senior Software Engineer",
+    company: "Merchive",
+    years: { start: "Sep 2020", end: "Present" },
+  },
+  {
+    position: "Senior Software Engineer",
+    company: "Seventh Ave, Inc",
+    years: { start: "Mar 2021", end: "Mar 2023" },
+  },
+  {
+    position: "Web Develoer",
+    company: "Giza Designs - Freelance",
+    years: { start: "Apr 2019", end: "Sep 2020" },
+  },
+  {
+    position: "Portrait Photographer",
+    company: "Phantasy Photography - Freelance",
+    years: { start: "Apr 2016", end: "Apr 2019" },
+  },
+];
+
 export default function Resume() {
   useEffect(() => {
     AOS.init({
@@ -18,28 +50,23 @@ export default function Resume() {
               <i className="las la-briefcase"> </i> Resume
             </h4>
             <h1 className="scroll-animation" data-aos="fade-up">
-              Education & <span> Experience </span>
+              My <span> Experience </span>
             </h1>
           </div>
 
           <div className="resume-timeline">
-            <div className="item scroll-animation" data-aos="fade-right">
-              <span className="date"> 2020 - Present </span>
-              <h2> Framer Desinger & Developer </h2> <p> Brunodee Agency </p>
-              <h2> Front - End WordPress Developer </h2> <p> Envato Market </p>
-            </div>
-            <div className="item scroll-animation" data-aos="fade-left">
-              <span className="date"> 2013 - 2019 </span>
-              <h2> Webflow Developer & Co - Founder </h2>
-              <p> Designflow Studio </p> <h2> Web Designer </h2>
-              <p> Freelance </p> <h2> Leader Team of Marketing </h2>
-              <p> AHA Marketing Agency </p>
-            </div>
-            <div className="item scroll-animation" data-aos="fade-right">
-              <span className="date"> 2010 - 2013 </span>
-              <h2> Bachelor Degree of Information Technology </h2>
-              <p> US RMIT University </p>
-            </div>
+            {experiences.map((exp, i) => (
+              <div
+                className="item scroll-animation"
+                data-aos={`fade-${i % 2 === 0 ? "right" : "left"}`}
+              >
+                <span className="date">
+                  {exp.years.start} - {exp.years.end}
+                </span>
+                <h2>{exp.position}</h2>
+                <p>{exp.company}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
