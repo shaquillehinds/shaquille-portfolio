@@ -1,0 +1,13 @@
+.main {
+  .left-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 1220px) {
+  .main {
+    .left-sidebar {
+      display: block;
+    }
+  }
+}

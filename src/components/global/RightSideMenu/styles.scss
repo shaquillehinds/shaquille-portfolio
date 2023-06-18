@@ -1,0 +1,175 @@
+@use "/src/css/variables" as v;
+
+.responsive-sidebar-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #565656;
+    opacity: 0.5;
+  }
+  .sidebar-menu-inner {
+    max-width: 345px;
+    width: 100%;
+    margin-left: auto;
+    background: #191919;
+    height: 100%;
+    overflow-x: hidden;
+    padding-top: 50px;
+    margin-right: -250px;
+    transition: 0.3s;
+    .menu-wrap {
+      width: 46%;
+      margin: auto;
+      p {
+        font-size: 18px;
+      }
+      .menu {
+        position: relative;
+        right: auto;
+        left: 0;
+        top: 0;
+        transform: translateY(0);
+        background: none;
+        border-radius: 0;
+        border: none;
+        margin-bottom: 30px;
+        li {
+          a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            &:hover {
+              span {
+                color: v.$color_5;
+              }
+            }
+            i {
+              margin-bottom: 2px;
+            }
+            span {
+              position: relative;
+              right: 0;
+              opacity: 1;
+              visibility: visible;
+              color: v.$color_1;
+              background: none;
+              margin: 0;
+              padding: 0;
+              border-radius: 0;
+              &::before {
+                display: none;
+              }
+            }
+          }
+          a.active {
+            span {
+              color: v.$color_5;
+            }
+          }
+        }
+      }
+    }
+    .global-color-option {
+      width: 46%;
+      margin: auto;
+    }
+    .sidebar-social {
+      width: 46%;
+      margin: auto;
+      ul {
+        gap: 15px;
+        li {
+          a {
+            color: v.$color_1;
+            transition: 0.3s;
+            font-size: 16px;
+            &:hover {
+              color: v.$color_3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.responsive-sidebar-menu.active {
+  opacity: 1;
+  visibility: visible;
+  .sidebar-menu-inner {
+    margin-right: 0;
+  }
+}
+.icon-menu {
+  position: absolute;
+  right: 68px;
+  top: 60px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #575757;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #1f1f1f;
+  z-index: 99;
+  span {
+    width: 20px;
+    display: block;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+  }
+  &:hover {
+    border-color: v.$border-color_1;
+    span {
+      background: var(--primary_color);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .icon-menu {
+    right: 30px;
+    top: 30px;
+  }
+}
+@media (max-width: 1220px) {
+  .icon-menu {
+    position: fixed;
+  }
+  .menu {
+    display: none !important;
+  }
+  .responsive-sidebar-menu {
+    .sidebar-menu-inner {
+      .menu-wrap {
+        .menu {
+          display: flex !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 2000px) {
+  .menu {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

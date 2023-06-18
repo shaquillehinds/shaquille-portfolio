@@ -1,0 +1,90 @@
+@use "/src/css/variables" as v;
+
+.portfolio-area {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.portfolio-items {
+  .portfolio-item {
+    margin-bottom: 62px;
+    .portfolio-item-inner {
+      height: 370px;
+      overflow: hidden;
+      border-radius: 30px;
+      position: relative;
+      margin-bottom: 30px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .portfolio-categories {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        bottom: 20px;
+        left: 20px;
+        li {
+          a {
+            display: block;
+            font-size: 14px;
+            background: #fff;
+            color: v.$color_6;
+            padding: 7px 20px;
+            border-radius: 19px;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+    &:hover {
+      .portfolio-item-inner {
+        .portfolio-categories {
+          li {
+            a {
+              background: #1f1f1f;
+              color: v.$color_5;
+            }
+          }
+        }
+      }
+      h2 {
+        a {
+          border-color: v.$border-color_2;
+        }
+      }
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 300;
+      margin: 0;
+      a {
+        color: v.$color_5;
+        display: inline-block;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+      }
+    }
+  }
+  > div {
+    &:last-child {
+      .portfolio-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .portfolio-item.portfolio-full {
+    .portfolio-item-inner {
+      height: 410px;
+    }
+  }
+}
+
+@media (max-width: 584px) {
+  .portfolio-area {
+    padding-top: 40px;
+  }
+}

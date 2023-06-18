@@ -1,0 +1,25 @@
+.about-area {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  .about-content {
+    p {
+      line-height: 30px;
+      max-width: 610px;
+    }
+  }
+}
+@media (max-width: 1220px) {
+  .about-area {
+    padding-bottom: 50px;
+    .about-content {
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 584px) {
+  .about-area {
+    padding-bottom: 0;
+  }
+}

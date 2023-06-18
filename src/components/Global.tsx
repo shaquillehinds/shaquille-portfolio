@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Video from "./global/Video";
 // import Pageloader from "./global/Pageloader";
-import Rsidemenu from "./global/Rsidemenu";
-import Scrollnav from "./global/Scrollnav";
-import Lsb from "./global/Lsb";
 import Settings from "./global/Settings";
 import MainWrapper from "./MainWrapper";
+import LeftSideBar from "./global/LeftSideBar";
+import RightSideMenu from "./global/RightSideMenu";
+import RightSideFloatingNav from "./global/RightSideFloatingNav";
 
 export default function Global() {
   const [currentVideo, setVideo] = useState("");
@@ -18,9 +18,9 @@ export default function Global() {
       <Video video={currentVideo} />
       {/* <Pageloader /> */}
       <Settings clickEvent={changeVideo} />
-      <Lsb />
-      <Rsidemenu />
-      <Scrollnav />
+      <LeftSideBar />
+      <RightSideMenu />
+      <RightSideFloatingNav />
       <MainWrapper />
     </div>
   );

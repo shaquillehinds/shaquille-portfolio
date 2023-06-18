@@ -1,0 +1,111 @@
+@use "/src/css/variables" as v;
+
+.menu {
+  flex-direction: column;
+  border: 1px solid #575757;
+  border-radius: 30px;
+  position: fixed;
+  right: 68px;
+  top: 322px;
+  text-align: center;
+  gap: 20px;
+  padding: 24px 0;
+  background: #1f1f1f;
+  z-index: 20;
+  li {
+    .scroll-to {
+      display: block;
+      position: relative;
+      width: 55px;
+      transition: 0.3s;
+      color: v.$color_1;
+      cursor: pointer;
+      &:hover {
+        color: v.$color_3;
+        span {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      i {
+        font-size: 20px;
+        display: block;
+      }
+      span {
+        position: absolute;
+        transition: 0.3s;
+        font-size: 12px;
+        background: #404042;
+        right: 100%;
+        color: v.$color_5;
+        display: block;
+        padding: 3px 8px;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background: #404042;
+          position: absolute;
+          right: -3px;
+          top: 50%;
+          transform: rotate(54deg) skew(-8deg, -39deg);
+          margin-top: -5px;
+          z-index: -1;
+        }
+      }
+    }
+    a {
+      display: block;
+      position: relative;
+      width: 55px;
+      transition: 0.3s;
+      color: v.$color_1;
+      cursor: pointer;
+      &:hover {
+        color: v.$color_3;
+        span {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      i {
+        font-size: 20px;
+        display: block;
+      }
+      span {
+        position: absolute;
+        transition: 0.3s;
+        font-size: 12px;
+        background: #404042;
+        right: 100%;
+        color: v.$color_5;
+        display: block;
+        padding: 3px 8px;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background: #404042;
+          position: absolute;
+          right: -3px;
+          top: 50%;
+          transform: rotate(54deg) skew(-8deg, -39deg);
+          margin-top: -5px;
+          z-index: -1;
+        }
+      }
+    }
+    a.active {
+      color: v.$color_3;
+    }
+    .scroll-to.active {
+      color: v.$color_3;
+    }
+  }
+}

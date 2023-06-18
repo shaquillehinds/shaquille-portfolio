@@ -1,0 +1,143 @@
+@use "/src/css/variables" as v;
+
+.contact-area {
+  padding-bottom: 50px;
+  .contact-content {
+    h3 {
+      font-size: 24px;
+      color: v.$color_5;
+      font-weight: 300;
+      margin-bottom: 60px;
+    }
+    #required-msg {
+      color: v.$color_8;
+      font-size: 14px;
+      margin-bottom: 31px;
+      display: none;
+    }
+    #required-msg.show {
+      display: block;
+    }
+    .contact-form {
+      .input-group {
+        margin-bottom: 34px;
+        label {
+          display: block;
+          font-size: 12px;
+          text-transform: uppercase;
+          color: v.$color_5;
+          margin-bottom: 2px;
+          sup {
+            color: v.$color_8;
+            font-size: 12px;
+            top: 0;
+          }
+          span {
+            color: v.$color_1;
+            text-transform: none;
+          }
+        }
+        select {
+          display: block;
+          color: v.$color_7;
+          width: 100%;
+          border: none;
+          background: none;
+          font-size: 18px;
+          padding: 0;
+          transition: 0.2s;
+          padding-bottom: 3px;
+          display: block;
+          margin-left: -5px !important;
+          font-weight: 300;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: v.$border-color_3;
+          }
+        }
+        textarea {
+          display: block;
+          color: v.$color_7;
+          width: 100%;
+          border: none;
+          background: none;
+          font-size: 18px;
+          padding: 0;
+          transition: 0.2s;
+          padding-bottom: 3px;
+          height: 140px;
+          border-bottom: 1px solid #555555;
+          resize: none;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: v.$border-color_3;
+          }
+          &::placeholder {
+            color: v.$color_7;
+          }
+        }
+        input {
+          display: block;
+          color: v.$color_7;
+          width: 100%;
+          border: none;
+          background: none;
+          font-size: 18px;
+          padding: 0;
+          transition: 0.2s;
+          padding-bottom: 3px;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: v.$border-color_3;
+          }
+          &::placeholder {
+            color: v.$color_7;
+          }
+        }
+      }
+      .input-group.upload-attachment {
+        position: relative;
+        label {
+          overflow: hidden;
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          i {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 2px;
+          }
+        }
+        input {
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+        }
+      }
+      .input-group.submit-btn-wrap {
+        margin-bottom: 0;
+        margin-top: 18px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .contact-area {
+    .contact-content {
+      h3 {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 584px) {
+  .contact-area {
+    padding-bottom: 80px;
+  }
+}

@@ -1,0 +1,43 @@
+@use "/src/css/variables" as v;
+
+.clients-logos {
+  padding-top: 100px;
+  h4 {
+    color: v.$color_5;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 57px;
+  }
+  .col-md-3 {
+    margin-bottom: 74px;
+  }
+  img {
+    display: block;
+    opacity: 0.3;
+    transition: 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .clients-logos {
+    .row {
+      .col-md-3 {
+        flex: 0 0 auto;
+        width: 33.3333%;
+        margin-bottom: 54px;
+      }
+    }
+  }
+}
+@media (max-width: 584px) {
+  .clients-logos {
+    .row {
+      .col-md-3 {
+        width: 50%;
+      }
+    }
+  }
+}

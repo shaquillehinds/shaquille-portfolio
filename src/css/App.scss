@@ -1,0 +1,136 @@
+@use "variables" as v;
+@use "animations";
+@use "globals";
+
+.bg-white {
+  background: #fff;
+}
+.content-width {
+  max-width: 770px;
+  width: 100%;
+  margin-left: auto;
+}
+.theme-btn {
+  background: var(--primary_color);
+  color: v.$color_2;
+  display: block;
+  text-align: center;
+  padding: 11px 58px 10px 58px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 30px;
+  justify-content: center;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid var(--primary_color);
+  i {
+    font-size: 24px;
+    margin-right: 10px;
+    display: block;
+    margin-bottom: 3px;
+  }
+  &:hover {
+    background: none;
+    color: v.$color_3;
+  }
+}
+.custom-container {
+  max-width: 1130px;
+  padding: 0 15px;
+  margin: auto;
+}
+.subtitle {
+  font-size: 12px;
+  color: v.$color_4;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 0;
+  border: 1px solid #565656;
+  padding: 9px 20px;
+  border-radius: 30px;
+  margin-bottom: 53px;
+  display: inline-flex;
+  align-items: center;
+  i {
+    margin-bottom: 1px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+}
+.page-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .bounceball {
+    position: relative;
+    display: inline-block;
+    height: 37px;
+    width: 15px;
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: v.$background-color_1;
+      transform-origin: 50%;
+      animation: bounceLoader 500ms alternate infinite ease;
+    }
+  }
+}
+
+.page-section {
+  overflow: hidden;
+}
+
+.section-header {
+  h1 {
+    font-size: 48px;
+    line-height: 60px;
+    color: v.$color_5;
+    font-weight: 300;
+    margin-bottom: 33px;
+    span {
+      color: v.$color_3;
+    }
+  }
+}
+
+@media (max-width: 1220px) {
+  .custom-container {
+    max-width: 767px;
+  }
+  .content-width {
+    max-width: 100%;
+  }
+  .section-header {
+    h1 {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 584px) {
+  .subtitle {
+    margin-bottom: 40px;
+  }
+  .section-header {
+    h1 {
+      font-size: 38px;
+      line-height: 1.4;
+    }
+  }
+}

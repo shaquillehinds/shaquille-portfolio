@@ -1,0 +1,56 @@
+@use "/src/css/variables" as v;
+
+.skills-area {
+  padding-top: 90px;
+  padding-bottom: 40px;
+}
+.skills {
+  .skill {
+    margin-bottom: 50px;
+    .skill-inner {
+      border: 2px solid #565656;
+      border-radius: 85px;
+      padding: 54px 0 48px 0;
+      margin-bottom: 20px;
+      transition: 0.3s;
+      img {
+        display: block;
+        margin: auto auto 29px auto;
+      }
+      h1 {
+        font-size: 30px;
+        color: v.$color_3;
+        font-weight: 300;
+        margin: 0;
+      }
+    }
+    &:hover {
+      .skill-inner {
+        border-color: v.$border-color_1;
+      }
+    }
+    p {
+      font-size: 14px;
+      color: v.$color_5;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-area {
+    .skills-content {
+      .row {
+        .col-md-3 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 584px) {
+  .skills-area {
+    padding-bottom: 0;
+  }
+}
