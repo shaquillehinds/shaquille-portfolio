@@ -1,48 +1,32 @@
 import "./styles.scss";
 
+interface NavLink {
+  href: string;
+  name: string;
+  icon: string;
+}
+
+const navLinks: NavLink[] = [
+  { href: "#home", name: "Name", icon: "las la-home" },
+  { href: "#about", name: "About", icon: "las la-user" },
+  { href: "#resume", name: "Resume", icon: "las la-briefcase" },
+  { href: "#services", name: "Services", icon: "las la-stream" },
+  { href: "#skills", name: "Skills", icon: "las la-shapes" },
+  { href: "#portfolio", name: "Portfolio", icon: "las la-grip-vertical" },
+  // { href: "#testimonial", name: "Testimonial", icon: "las la-comment" },
+  // { href: "#contact", name: "Contact", icon: "las la-envelope" },
+];
+
 export default function RightSideFloatingNav() {
   return (
     <ul className="menu scroll-nav d-flex">
-      <li>
-        <a className="scroll-to" href="#home">
-          <span> Home </span> <i className="las la-home"></i>
-        </a>
-      </li>
-      <li>
-        <a className="scroll-to" href="#about">
-          <span> About </span> <i className="lar la-user"></i>
-        </a>
-      </li>
-      <li>
-        <a className="scroll-to" href="#resume">
-          <span> Resume </span> <i className="las la-briefcase"></i>
-        </a>
-      </li>
-      <li>
-        <a className="scroll-to" href="#services">
-          <span> Services </span> <i className="las la-stream"></i>
-        </a>
-      </li>
-      <li>
-        <a className="scroll-to" href="#skills">
-          <span> Skills </span> <i className="las la-shapes"></i>
-        </a>
-      </li>
-      <li>
-        <a className="scroll-to" href="#portfolio">
-          <span> Portfolios </span> <i className="las la-grip-vertical"></i>
-        </a>
-      </li>
-      <li>
-        <a className="scroll-to" href="#testimonial">
-          <span> Testimonial </span> <i className="lar la-comment"></i>
-        </a>
-      </li>
-      <li>
-        <a className="scroll-to" href="#contact">
-          <span> Contact </span> <i className="las la-envelope"></i>
-        </a>
-      </li>
+      {navLinks.map((link) => (
+        <li>
+          <a className="scroll-to" href={link.href}>
+            <span> {link.name} </span> <i className={link.icon}></i>
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }
