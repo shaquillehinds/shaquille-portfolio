@@ -55,7 +55,10 @@ export default function Skills() {
           </div>
           <div className="row skills text-center">
             {skills.map((skill, i) => (
-              <div className="col-md-3 scroll-animation" data-aos="fade-up">
+              <div
+                className="col-md-3 scroll-animation"
+                data-aos={`fade-${i % 2 === 0 ? "right" : "left"}`}
+              >
                 <div className="skill">
                   <div className="skill-inner">
                     {skill.imageSrc && (
