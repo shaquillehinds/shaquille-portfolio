@@ -26,8 +26,8 @@ export default function HeroSection() {
             </h1>
           </div>
           <p className="scroll-animation" data-aos="fade-up">
-            I love the process of writing logic that brings results, I also love
-            problem solving and digital creation.
+            Coding to me is art. It's not just about what the code does, but how
+            it is structured, organized and flows.
           </p>
           <a
             href="#portfolio"
