@@ -3,12 +3,12 @@ import Resume from "../main/Resume";
 import Service from "../main/Service";
 import Skills from "../main/Skills";
 import Portfolio from "../main/Portfolio";
-import Testimonials from "../main/Testimonials";
-import Pricing from "../main/Pricing";
-import Contact from "../main/Contact";
 import LeftSideBar from "../global/LeftSideBar";
-import ClientLogos from "../main/ClientLogos";
 import HeroSection from "../main/HeroSection";
+// import Testimonials from "../main/Testimonials";
+// import Pricing from "../main/Pricing";
+// import Contact from "../main/Contact";
+// import ClientLogos from "../main/ClientLogos";
 import "./styles.scss";
 
 export default function Main() {
@@ -23,10 +23,10 @@ export default function Main() {
           <Service />
           <Skills />
           <Portfolio />
-          <Testimonials />
+          {/* <Testimonials />
           <ClientLogos />
           <Pricing />
-          <Contact />
+          <Contact /> */}
         </div>
       </div>
     </main>
