@@ -3,6 +3,34 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./styles.scss";
 
+interface Specialization {
+  name: string;
+  description: string;
+  icon: string;
+  subscript: string;
+}
+
+const specializations: Specialization[] = [
+  {
+    name: "Mobile Development",
+    description: "I code amazing apps with React Native",
+    icon: "las la-mobile",
+    subscript: "2 projects",
+  },
+  {
+    name: "Frontend End Development",
+    description: "I code beautiful UIs with React",
+    icon: "las la-code",
+    subscript: "10+ projects",
+  },
+  {
+    name: "Back End Development",
+    description: "I write serverside logic with Express & NestJS",
+    icon: "las la-server",
+    subscript: "10+ projects",
+  },
+];
+
 export default function Service() {
   useEffect(() => {
     AOS.init({
@@ -25,24 +53,17 @@ export default function Service() {
             </h1>
           </div>
           <div className="services-items">
-            <div className="service-item scroll-animation" data-aos="fade-up">
-              <i className="las la-bezier-curve"> </i> <h2> Website Design </h2>
-              <p>
-                I created digital products with unique ideas use Figma & Framer
-              </p>
-              <span className="projects"> 24 Projects </span>
-            </div>
-            <div className="service-item scroll-animation" data-aos="fade-up">
-              <i className="las la-code"> </i> <h2> Development </h2>
-              <p> I build website go live with Framer, Webflow or WordPress </p>
-              <span className="projects"> 126 Projects </span>
-            </div>
-            <div className="service-item scroll-animation" data-aos="fade-up">
-              <i className="las la-bezier-curve"> </i>
-              <h2> SEO / Marketing </h2>
-              <p> Increase the traffic for your website with SEO optimized </p>
-              <span className="projects"> 8 Projects </span>
-            </div>
+            {specializations.map((spec, i) => (
+              <div
+                className="service-item scroll-animation"
+                data-aos={`fade-${i % 2 === 0 ? "right" : "left"}`}
+              >
+                <i className={spec.icon}> </i>
+                <h2> {spec.name} </h2>
+                <p> {spec.description} </p>
+                <span className="projects"> {spec.subscript} </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
