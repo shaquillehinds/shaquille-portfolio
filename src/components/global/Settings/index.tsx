@@ -12,11 +12,7 @@ const colorOptions = [
   "#ff99cc",
 ];
 
-interface SettingsProps {
-  clickEvent: (video: string) => void;
-}
-
-export default function Settings(props: SettingsProps) {
+export default function Settings() {
   const [activeColor, setActiveColor] = useState(colorOptions[0]); //this will set the default color to  '#28e98c'
   const [isSettingsOpen, setIsSettingsOpen] = useState(false); //this settings overlay is closed defaultly
 
@@ -25,8 +21,6 @@ export default function Settings(props: SettingsProps) {
     setIsSettingsOpen(false); // so when we select the color the overlay automatically closes
     document.documentElement.style.setProperty("--primary_color", color); // the setActiveColor after it being set it return the new color
   };
-
-  const htmlBody = document.querySelector("body") as HTMLBodyElement;
 
   return (
     //is the isSettingsOpen is true add class 'active' else 'leave empty'
@@ -59,81 +53,6 @@ export default function Settings(props: SettingsProps) {
                 ></a>
               ))}
             </div>
-            <p> THREE DIMENSIONAL SHAPES </p>
-            <ul className="themes">
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    htmlBody.style.backgroundColor = "black";
-                    props.clickEvent("./assets/videos/video1.mp4");
-                    setIsSettingsOpen(false);
-                  }}
-                >
-                  Earth Lines Sphere
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    htmlBody.style.backgroundColor = "#1f1f1f";
-                    props.clickEvent("./assets/videos/video2.mp4");
-                    setIsSettingsOpen(false);
-                  }}
-                >
-                  3 D Abstract Ball
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    htmlBody.style.backgroundColor = "#1f1f1f";
-                    props.clickEvent("./assets/videos/video3.mp4");
-                    setIsSettingsOpen(false);
-                  }}
-                >
-                  Water Waves
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    htmlBody.style.backgroundColor = "#1f1f1f";
-                    props.clickEvent("./assets/videos/video4.mp4");
-                    setIsSettingsOpen(false);
-                  }}
-                >
-                  Liquids Wavy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    htmlBody.style.backgroundColor = "black";
-                    props.clickEvent("./assets/videos/video5.mp4");
-                    setIsSettingsOpen(false);
-                  }}
-                >
-                  Simple Strings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    htmlBody.style.backgroundColor = "black";
-                    props.clickEvent("");
-                    setIsSettingsOpen(false);
-                  }}
-                >
-                  Solid Color
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
