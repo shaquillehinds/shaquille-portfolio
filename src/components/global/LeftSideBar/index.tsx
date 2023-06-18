@@ -2,7 +2,8 @@ import "./styles.scss";
 
 interface SocialLink {
   href: string;
-  className: string;
+  className?: string;
+  image?: string;
 }
 
 const socials: SocialLink[] = [
@@ -11,6 +12,10 @@ const socials: SocialLink[] = [
     className: "lab la-linkedin",
   },
   { href: "https://github.com/shaquillehinds", className: "lab la-github" },
+  {
+    href: "https://www.upwork.com/freelancers/~014d3855d49f2fb7c8",
+    image: "/assets/images/upwork.svg",
+  },
 ];
 
 export default function LeftSideBar() {
@@ -27,7 +32,11 @@ export default function LeftSideBar() {
         {socials.map((link) => (
           <li key={link.href}>
             <a href={link.href} target="_blank">
-              <i className={link.className}> </i>
+              {link.image ? (
+                <img src={link.image} />
+              ) : (
+                <i className={link.className}> </i>
+              )}
             </a>
           </li>
         ))}
