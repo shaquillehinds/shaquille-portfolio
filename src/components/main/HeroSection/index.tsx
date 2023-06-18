@@ -22,12 +22,12 @@ export default function HeroSection() {
               <i className="las la-home"> </i> Introduce
             </h4>
             <h1 className="scroll-animation" data-aos="fade-up">
-              Say Hi from <span> Drake </span>, Framer Designer and Developer:
+              Hi, I'm<span> Shaquille</span> a Software Engineer
             </h1>
           </div>
           <p className="scroll-animation" data-aos="fade-up">
-            I design and code beautifully simple things and i love what i do
-            .Just simple like that!
+            I love the process of writing logic that brings results, I also love
+            problem solving and digital creation.
           </p>
           <a
             href="#portfolio"
@@ -39,16 +39,14 @@ export default function HeroSection() {
           </a>
           <div className="facts d-flex">
             <div className="left scroll-animation" data-aos="fade-right">
-              <h1> 10 + </h1>
+              <h1> 4 +</h1>
               <p>
                 Years of <br /> Experience
               </p>
             </div>
             <div className="right scroll-animation" data-aos="fade-left">
-              <h1> 182 + </h1>
-              <p>
-                projects completed on <br /> 15 countries
-              </p>
+              <h1> 20 + </h1>
+              <p>projects completed</p>
             </div>
           </div>
         </div>
