@@ -1,42 +1,43 @@
 import "./styles.scss";
 
+interface SocialLink {
+  href: string;
+  className: string;
+}
+
+const socials: SocialLink[] = [
+  {
+    href: "https://www.linkedin.com/in/shaquillehinds/",
+    className: "lab la-linkedin",
+  },
+  { href: "https://github.com/shaquillehinds", className: "lab la-github" },
+];
+
 export default function LeftSideBar() {
   return (
     <div className="left-sidebar">
       <div className="sidebar-header d-flex align-items-center justify-content-between">
-        <img src="./assets/images/logo.png" alt="Logo" />
-        <span className="designation"> Framer Designer & Developer </span>
+        {/* <img src="./assets/images/logo.png" alt="Logo" />
+        <span className="designation">Software Engineer</span> */}
       </div>
-      <img className="me" src="./assets/images/me.jpg" alt="Me" />
-      <h2 className="email"> hello @drake.design </h2>
-      <h2 className="address"> Base in Los Angeles, CA </h2>
-      <p className="copyright">
-        &copy; {new Date().getFullYear()} Drake.All Rights Reserved
-      </p>
+      <img className="me" src="./assets/images/me.png" alt="Me" />
+      <h2>Shaquille Hinds</h2>
+      <h2 className="address"> Based in Bridgetown, Barbados </h2>
       <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
-        <li>
-          <a href="https://twitter.com/">
-            <i className="lab la-twitter"> </i>
-          </a>
-        </li>
-        <li>
-          <a href="https://dribble.com/">
-            <i className="lab la-dribbble"> </i>
-          </a>
-        </li>
-        <li>
-          <a href="https://instagram.com/">
-            <i className="lab la-instagram"> </i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/">
-            <i className="lab la-github"> </i>
-          </a>
-        </li>
+        {socials.map((link) => (
+          <li key={link.href}>
+            <a href={link.href}>
+              <i className={link.className}> </i>
+            </a>
+          </li>
+        ))}
       </ul>
-      <a href="#" className="theme-btn">
-        <i className="las la-envelope"> </i> Hire Me!
+      <a
+        target="_blank"
+        href="/assets/ShaquilleResume.pdf"
+        className="theme-btn"
+      >
+        <i className="las la-download"> </i> Download Resume
       </a>
     </div>
   );
