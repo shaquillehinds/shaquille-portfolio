@@ -18,17 +18,23 @@ export default function About() {
               <i className="lar la-user"> </i> About
             </h4>
             <h1 className="scroll-animation" data-aos="fade-up">
-              Every great design begin with <br />
-              an even <span> better story </span>
+              A little bit about
+              <span> me</span>
             </h1>
           </div>
           <p className="scroll-animation" data-aos="fade-up">
-            Since beginning my journey as a freelance designer nearly 8 years
-            ago, I 've done remote work for agencies, consulted for startups,
-            and collaborated with talented people to create digital products for
-            both business and consumer use.I 'm quietly confident, naturally
-            curious, and perpetually working on improving my chopsone design
-            problem at a time.
+            I am a proficient full-stack software engineer with a wealth of
+            experience in building websites and web applications using React, as
+            well as mobile applications with React Native. I was the Lead Mobile
+            Engineer at a startup that raised over 2 million dollars, where I
+            successfully developed various features such as audio/video
+            experience, feed, question and answer, group chat, and communities.
+            In addition to my role at Seventh Ave, I have demonstrated my
+            entrepreneurial spirit by founding my own e-commerce platform,
+            Merchive. I have enriched the platform with features such as live
+            messaging and product filtering. I possesses a strong skill set that
+            includes React, Redux, MongoDB, GIT, Docker, and more. I have keen
+            interest in React Native, animations, and Typescript.
           </p>
         </div>
       </div>
