@@ -35,6 +35,11 @@ const portfolioItems: PortfolioItem[] = [
     categories: ["React"],
     link: "https://shaquille-indecision.netlify.app",
   },
+  {
+    name: "Casuarina Thrift",
+    image: "/assets/images/portfolio4.png",
+    categories: ["React Native", "Figma", "NestJS", "MongoDB"],
+  },
 ];
 
 export default function Portfolio() {
