@@ -27,7 +27,7 @@ export default function LeftSideBar() {
       </div> */}
       <img className="me" src="./assets/images/me.png" alt="Me" />
       <h2>Shaquille Hinds</h2>
-      <p className="address"> Based in Bridgetown, Barbados 🇧🇧</p>
+      <p className="address"> Software Engineer in Barbados 🇧🇧</p>
       <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
         {socials.map((link) => (
           <li key={link.href}>
