@@ -56,6 +56,7 @@ export default function Skills() {
           <div className="row skills text-center">
             {skills.map((skill, i) => (
               <div
+                key={skill.name}
                 className="col-md-3 scroll-animation"
                 data-aos={`fade-${
                   i % 4 === 0

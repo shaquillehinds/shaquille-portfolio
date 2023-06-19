@@ -48,7 +48,7 @@ export default function RightSideMenu() {
             <p> Menu </p>
             <ul className="menu scroll-nav-responsive d-flex">
               {navLinks.map((link) => (
-                <li>
+                <li key={link.name}>
                   <a
                     className="scroll-to"
                     href={link.href}

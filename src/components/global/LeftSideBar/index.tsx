@@ -19,13 +19,22 @@ const socials: SocialLink[] = [
 ];
 
 export default function LeftSideBar() {
+  const disableLoader = () => {
+    const loader = document.querySelector(".page-loader");
+    loader?.classList.add("d-none");
+  };
   return (
     <div className="left-sidebar">
       {/* <div className="sidebar-header d-flex align-items-center justify-content-between">
         <img src="./assets/images/logo.png" alt="Logo" />
         <span className="designation">Software Engineer</span>
       </div> */}
-      <img className="me" src="./assets/images/me.png" alt="Me" />
+      <img
+        className="me"
+        src="./assets/images/me.png"
+        alt="Me"
+        onLoad={disableLoader}
+      />
       <h2>Shaquille Hinds</h2>
       <p className="address"> Software Engineer in Barbados 🇧🇧</p>
       <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">

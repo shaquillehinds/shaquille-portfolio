@@ -57,6 +57,7 @@ export default function Resume() {
           <div className="resume-timeline">
             {experiences.map((exp, i) => (
               <div
+                key={exp.company}
                 className="item scroll-animation"
                 data-aos={`fade-${i % 2 === 0 ? "right" : "left"}`}
               >

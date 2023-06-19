@@ -55,6 +55,7 @@ export default function Service() {
           <div className="services-items">
             {specializations.map((spec, i) => (
               <div
+                key={spec.name}
                 className="service-item scroll-animation"
                 data-aos={`fade-${i % 2 === 0 ? "right" : "left"}`}
               >
