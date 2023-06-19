@@ -30,6 +30,70 @@
     padding-top: 50px;
     margin-right: -250px;
     transition: 0.3s;
+    .pick-color {
+      width: 46%;
+      margin: auto;
+    }
+    .color-boxed {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      a {
+        cursor: pointer;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: relative;
+        background: #28e98c;
+        &::before {
+          content: "";
+          border: 1px solid #fff;
+          position: absolute;
+          border-radius: 50%;
+          width: calc(100% + 10px);
+          height: calc(100% + 10px);
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: 0.3s;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          border: none;
+          transform: translate(-50%, -50%);
+          width: 4px;
+          height: 4px;
+          left: 50%;
+          top: 50%;
+          background: #fff;
+          border-radius: 50%;
+          opacity: 0;
+        }
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+          &::before {
+            opacity: 1;
+          }
+        }
+        i {
+          font-size: 14px;
+        }
+      }
+      a.clr-active {
+        &::after {
+          opacity: 1;
+        }
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
     .menu-wrap {
       width: 46%;
       margin: auto;

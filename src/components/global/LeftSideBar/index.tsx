@@ -21,10 +21,10 @@ const socials: SocialLink[] = [
 export default function LeftSideBar() {
   return (
     <div className="left-sidebar">
-      <div className="sidebar-header d-flex align-items-center justify-content-between">
-        {/* <img src="./assets/images/logo.png" alt="Logo" />
-        <span className="designation">Software Engineer</span> */}
-      </div>
+      {/* <div className="sidebar-header d-flex align-items-center justify-content-between">
+        <img src="./assets/images/logo.png" alt="Logo" />
+        <span className="designation">Software Engineer</span>
+      </div> */}
       <img className="me" src="./assets/images/me.png" alt="Me" />
       <h2>Shaquille Hinds</h2>
       <p className="address"> Based in Bridgetown, Barbados 🇧🇧</p>
@@ -46,7 +46,7 @@ export default function LeftSideBar() {
         href="/assets/ShaquilleResume.pdf"
         className="theme-btn"
       >
-        <i className="las la-download"> </i> Download Resume
+        <i className="las la-download"> </i> CV/Resume
       </a>
     </div>
   );
