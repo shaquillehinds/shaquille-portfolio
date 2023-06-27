@@ -36,6 +36,13 @@ export default function About() {
             includes React, Redux, MongoDB, GIT, Docker, and more. I have keen
             interest in React Native, animations, and Typescript.
           </p>
+          <iframe
+            src="https://www.youtube.com/embed/gXywMPGTarY"
+            title="About Shaquille Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </section>

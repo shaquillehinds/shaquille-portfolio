@@ -6,6 +6,10 @@
       line-height: 30px;
       max-width: 610px;
     }
+    iframe {
+      width: 584px;
+      height: 330px;
+    }
   }
 }
 @media (max-width: 1220px) {
@@ -21,5 +25,11 @@
 @media (max-width: 584px) {
   .about-area {
     padding-bottom: 0;
+    .about-content {
+      iframe {
+        width: 350px;
+        height: 200px;
+      }
+    }
   }
 }
