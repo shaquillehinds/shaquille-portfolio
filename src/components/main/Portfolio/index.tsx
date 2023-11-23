@@ -12,33 +12,49 @@ interface PortfolioItem {
   categories: string[];
   name: string;
   link?: string;
+  video?: string;
 }
 
 const portfolioItems: PortfolioItem[] = [
   {
+    name: "Path AI",
+    image: "/assets/images/portfolio5.png",
+    categories: ["Website", "React", "Tail Wind CSS", "Vite"],
+    link: "https://app.yourpath.ai",
+  },
+  {
+    name: "Casuarina Thrift",
+    narrow: true,
+    image: "/assets/images/portfolio4.png",
+    categories: ["Mobile App", "React Native", "Figma", "NestJS", "MongoDB"],
+    video: "https://youtube.com/shorts/gUdxWMRt3f8?feature=share",
+  },
+  {
+    name: "7th Ave",
+    narrow: true,
+    image: "/assets/images/portfolio6.png",
+    categories: ["Mobile App", "React Native", "Express", "MongoDB"],
+    video: "https://youtu.be/PyQ8WMFBoQI",
+  },
+  {
     name: "Merchive",
     image: "/assets/images/portfolio2.png",
-    categories: ["React", "Figma", "Express", "MongoDB"],
+    categories: ["Website", "React", "Figma", "Express", "MongoDB"],
     link: "https://merchive.com",
   },
   {
     name: "Ortex Login",
     narrow: true,
     image: "/assets/images/portfolio1.png",
-    categories: ["React"],
+    categories: ["Website", "React"],
     link: "https://ortex-login-shaquille.netlify.app",
   },
   {
     name: "Indecision App",
     narrow: true,
     image: "/assets/images/portfolio3.png",
-    categories: ["React"],
+    categories: ["Website", "React"],
     link: "https://shaquille-indecision.netlify.app",
-  },
-  {
-    name: "Casuarina Thrift",
-    image: "/assets/images/portfolio4.png",
-    categories: ["React Native", "Figma", "NestJS", "MongoDB"],
   },
 ];
 
@@ -83,9 +99,15 @@ export default function Portfolio() {
               >
                 <div className="portfolio-item portfolio-full">
                   <div className="portfolio-item-inner">
-                    <a href={item.image} data-lightbox="example-1">
-                      <img src={item.image} alt="Portfolio" />
-                    </a>
+                    {item.video ? (
+                      <a href={item.video} target="_blank">
+                        <img src={item.image} alt="Portfolio" />
+                      </a>
+                    ) : (
+                      <a href={item.image} data-lightbox="example-1">
+                        <img src={item.image} alt="Portfolio" />
+                      </a>
+                    )}
                     <ul className="portfolio-categories">
                       {item.categories.map((category) => (
                         <li key={category}>
@@ -95,7 +117,7 @@ export default function Portfolio() {
                     </ul>
                   </div>
                   <h2>
-                    <a href={item.link} target="_blank">
+                    <a href={item.link || item.video} target="_blank">
                       {item.name}
                     </a>
                   </h2>
