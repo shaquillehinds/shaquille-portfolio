@@ -27,7 +27,7 @@ const portfolioItems: PortfolioItem[] = [
     narrow: true,
     image: "/assets/images/portfolio4.png",
     categories: ["Mobile App", "React Native", "Figma", "NestJS", "MongoDB"],
-    video: "https://youtube.com/shorts/gUdxWMRt3f8?feature=share",
+    link: "https://play.google.com/store/apps/details?id=com.casuarina&hl=en_US",
   },
   {
     name: "7th Ave",

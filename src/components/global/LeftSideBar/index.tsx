@@ -31,7 +31,7 @@ export default function LeftSideBar() {
       </div> */}
       <img
         className="me"
-        src="./assets/images/me.png"
+        src="./assets/images/me.jpg"
         alt="Me"
         onLoad={disableLoader}
       />
