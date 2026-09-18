@@ -31,7 +31,7 @@ export default function HeroSection() {
             tools that make teams faster at building them.
           </p>
           <a
-            href="#portfolio"
+            href="#open-source"
             className="go-to-project-btn scroll-to scroll-animation"
             data-aos="fade-up"
             aria-label="My projects"

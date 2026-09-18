@@ -3,7 +3,6 @@ import Resume from "../main/Resume";
 import Service from "../main/Service";
 import Skills from "../main/Skills";
 import OpenSource from "../main/OpenSource";
-import Portfolio from "../main/Portfolio";
 import Contact from "../main/Contact";
 import LeftSideBar from "../global/LeftSideBar";
 import HeroSection from "../main/HeroSection";
@@ -21,7 +20,6 @@ export default function Main() {
           <Service />
           <Skills />
           <OpenSource />
-          <Portfolio />
           <Contact />
         </div>
       </div>

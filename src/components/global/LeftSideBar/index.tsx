@@ -24,15 +24,12 @@ const socials: SocialLink[] = [
     icon: "lab la-npm",
   },
   {
-    // TODO(shaq): confirm channel URL
-    href: "https://www.youtube.com/@shaquillehinds",
+    href: "https://www.youtube.com/@ShaquilleHinds-x7r",
     label: "YouTube",
     icon: "lab la-youtube",
   },
 ];
 
-// TODO(shaq): replace /public/assets/ShaquilleResume.pdf with the new PDF under
-// this filename and delete the old one.
 const resumeHref = "/assets/ShaquilleHinds-Resume.pdf";
 const email = "dev@shaquillehinds.com";
 
@@ -62,7 +59,9 @@ export default function LeftSideBar() {
         onError={disableLoader}
       />
       <h2>Shaquille Hinds</h2>
-      <p className="address">Senior React Native Engineer · Bangkok, Thailand</p>
+      <p className="address">
+        Senior React Native Engineer · Bangkok, Thailand
+      </p>
       <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
         {socials.map((link) => (
           <li key={link.href}>

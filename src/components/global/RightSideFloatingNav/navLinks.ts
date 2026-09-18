@@ -11,7 +11,6 @@ const navLinks: NavLink[] = [
   { href: "#services", name: "What I do", icon: "las la-stream" },
   { href: "#skills", name: "Skills", icon: "las la-shapes" },
   { href: "#open-source", name: "Open Source", icon: "las la-cube" },
-  { href: "#portfolio", name: "Portfolio", icon: "las la-grip-vertical" },
   { href: "#contact", name: "Contact", icon: "las la-envelope" },
 ];
 

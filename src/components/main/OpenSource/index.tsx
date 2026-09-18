@@ -10,8 +10,6 @@ interface Package {
   github?: string;
 }
 
-// TODO(shaq): confirm exact npm names for each package. These were checked
-// against the npm registry (maintainer:shaquillehinds) on 2026-09-18.
 const packages: Package[] = [
   {
     name: "react-native-essentials",
@@ -112,7 +110,7 @@ function useMonthlyDownloads(npmName: string | undefined) {
     const controller = new AbortController();
     fetch(
       `https://api.npmjs.org/downloads/point/last-month/${encodeURIComponent(npmName)}`,
-      { signal: controller.signal }
+      { signal: controller.signal },
     )
       .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
       .then((data: { downloads?: unknown }) => {
@@ -139,7 +137,7 @@ export default function OpenSource() {
     ? featured.tags.map((tag, i) =>
         i === 0 && liveDownloads !== null
           ? `${liveDownloads.toLocaleString("en-US")} downloads/mo`
-          : tag
+          : tag,
       )
     : [];
 
@@ -163,7 +161,10 @@ export default function OpenSource() {
           </p>
 
           {featured && (
-            <div className="package-featured scroll-animation" data-aos="fade-up">
+            <div
+              className="package-featured scroll-animation"
+              data-aos="fade-up"
+            >
               <div className="package-featured-head">
                 <h3>
                   <a href={npmUrl(featured)} {...externalProps}>
@@ -179,11 +180,19 @@ export default function OpenSource() {
                 ))}
               </ul>
               <div className="package-links">
-                <a className="theme-btn" href={npmUrl(featured)} {...externalProps}>
+                <a
+                  className="theme-btn"
+                  href={npmUrl(featured)}
+                  {...externalProps}
+                >
                   <i className="lab la-npm" aria-hidden="true"></i> npm
                 </a>
                 {featured.github && (
-                  <a className="text-link" href={featured.github} {...externalProps}>
+                  <a
+                    className="text-link"
+                    href={featured.github}
+                    {...externalProps}
+                  >
                     <i className="lab la-github" aria-hidden="true"></i> GitHub
                   </a>
                 )}
@@ -209,7 +218,8 @@ export default function OpenSource() {
           </div>
 
           <a className="all-packages" href={allPackagesUrl} {...externalProps}>
-            All packages <i className="las la-arrow-right" aria-hidden="true"></i>
+            All packages{" "}
+            <i className="las la-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
       </div>

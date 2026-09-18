@@ -29,7 +29,6 @@ const links: ContactLink[] = [
   },
   {
     label: "Download resume",
-    // TODO(shaq): add /public/assets/ShaquilleHinds-Resume.pdf
     href: "/assets/ShaquilleHinds-Resume.pdf",
     icon: "las la-download",
     download: true,
@@ -62,7 +61,12 @@ export default function Contact() {
           <div className="contact-links scroll-animation" data-aos="fade-up">
             {links.map((link) =>
               link.download ? (
-                <a key={link.href} className="theme-btn" href={link.href} download>
+                <a
+                  key={link.href}
+                  className="theme-btn"
+                  href={link.href}
+                  download
+                >
                   <i className={link.icon} aria-hidden="true"></i> {link.label}
                 </a>
               ) : (
@@ -75,7 +79,7 @@ export default function Contact() {
                 >
                   <i className={link.icon} aria-hidden="true"></i> {link.label}
                 </a>
-              )
+              ),
             )}
           </div>
         </div>
