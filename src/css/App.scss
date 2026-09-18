@@ -65,7 +65,8 @@
 }
 
 .section-header {
-  h1 {
+  h1,
+  h2 {
     font-size: 48px;
     line-height: 60px;
     color: v.$color_5;
@@ -85,7 +86,8 @@
     max-width: 100%;
   }
   .section-header {
-    h1 {
+    h1,
+    h2 {
       br {
         display: none;
       }
@@ -98,7 +100,8 @@
     margin-bottom: 40px;
   }
   .section-header {
-    h1 {
+    h1,
+    h2 {
       font-size: 38px;
       line-height: 1.4;
     }

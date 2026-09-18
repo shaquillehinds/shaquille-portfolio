@@ -1,61 +1,88 @@
+import { useEffect } from "react";
 import "./styles.scss";
 
 interface SocialLink {
   href: string;
-  className?: string;
-  image?: string;
+  label: string;
+  icon: string;
 }
 
 const socials: SocialLink[] = [
   {
     href: "https://www.linkedin.com/in/shaquillehinds/",
-    className: "lab la-linkedin",
+    label: "LinkedIn",
+    icon: "lab la-linkedin",
   },
-  { href: "https://github.com/shaquillehinds", className: "lab la-github" },
   {
-    href: "https://www.upwork.com/freelancers/~014d3855d49f2fb7c8",
-    image: "/assets/images/upwork.svg",
+    href: "https://github.com/shaquillehinds",
+    label: "GitHub",
+    icon: "lab la-github",
+  },
+  {
+    href: "https://www.npmjs.com/~shaquillehinds",
+    label: "npm",
+    icon: "lab la-npm",
+  },
+  {
+    // TODO(shaq): confirm channel URL
+    href: "https://www.youtube.com/@shaquillehinds",
+    label: "YouTube",
+    icon: "lab la-youtube",
   },
 ];
 
+// TODO(shaq): replace /public/assets/ShaquilleResume.pdf with the new PDF under
+// this filename and delete the old one.
+const resumeHref = "/assets/ShaquilleHinds-Resume.pdf";
+const email = "dev@shaquillehinds.com";
+
+function disableLoader() {
+  document.querySelector(".page-loader")?.classList.add("d-none");
+}
+
 export default function LeftSideBar() {
-  const disableLoader = () => {
-    const loader = document.querySelector(".page-loader");
-    loader?.classList.add("d-none");
-  };
+  useEffect(() => {
+    // Fallback: a cached or failed image never fires onLoad in some browsers,
+    // so also dismiss the loader once the window has finished loading.
+    if (document.readyState === "complete") {
+      disableLoader();
+      return;
+    }
+    window.addEventListener("load", disableLoader);
+    return () => window.removeEventListener("load", disableLoader);
+  }, []);
+
   return (
     <div className="left-sidebar">
-      {/* <div className="sidebar-header d-flex align-items-center justify-content-between">
-        <img src="./assets/images/logo.png" alt="Logo" />
-        <span className="designation">Software Engineer</span>
-      </div> */}
       <img
         className="me"
-        src="./assets/images/me.jpg"
-        alt="Me"
+        src="/assets/images/me.jpg"
+        alt="Shaquille Hinds"
         onLoad={disableLoader}
+        onError={disableLoader}
       />
       <h2>Shaquille Hinds</h2>
-      <p className="address"> Software Engineer in Barbados 🇧🇧</p>
+      <p className="address">Senior React Native Engineer · Bangkok, Thailand</p>
       <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
         {socials.map((link) => (
           <li key={link.href}>
-            <a href={link.href} target="_blank">
-              {link.image ? (
-                <img src={link.image} />
-              ) : (
-                <i className={link.className}> </i>
-              )}
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              title={link.label}
+            >
+              <i className={link.icon} aria-hidden="true"></i>
             </a>
           </li>
         ))}
       </ul>
-      <a
-        target="_blank"
-        href="/assets/ShaquilleResume.pdf"
-        className="theme-btn"
-      >
-        <i className="las la-download"> </i> CV/Resume
+      <a href={resumeHref} download className="theme-btn">
+        <i className="las la-download" aria-hidden="true"></i> Resume
+      </a>
+      <a className="email-link" href={`mailto:${email}`}>
+        {email}
       </a>
     </div>
   );

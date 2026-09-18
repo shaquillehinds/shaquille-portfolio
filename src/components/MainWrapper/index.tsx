@@ -2,7 +2,9 @@ import About from "../main/About";
 import Resume from "../main/Resume";
 import Service from "../main/Service";
 import Skills from "../main/Skills";
+import OpenSource from "../main/OpenSource";
 import Portfolio from "../main/Portfolio";
+import Contact from "../main/Contact";
 import LeftSideBar from "../global/LeftSideBar";
 import HeroSection from "../main/HeroSection";
 import "./styles.scss";
@@ -12,13 +14,15 @@ export default function Main() {
     <main className="main">
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <LeftSideBar /> {/* this component will used by mobile devices */}
+          <LeftSideBar /> {/* rendered inline on narrow screens only */}
           <HeroSection />
           <About />
           <Resume />
           <Service />
           <Skills />
+          <OpenSource />
           <Portfolio />
+          <Contact />
         </div>
       </div>
     </main>
