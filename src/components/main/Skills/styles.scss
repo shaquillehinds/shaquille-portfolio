@@ -10,24 +10,26 @@
     .skill-inner {
       border: 2px solid #565656;
       border-radius: 85px;
-      padding: 54px 0 48px 0;
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
       transition: 0.3s;
-      i {
+      i,
+      .letter {
         font-size: 75px;
+        line-height: 1;
         color: v.$color_4;
-        margin-bottom: 15px;
+      }
+      .letter {
+        font-weight: 300;
       }
       img {
         display: block;
-        margin: auto auto 29px auto;
         width: 60px;
-      }
-      h1 {
-        font-size: 30px;
-        color: v.$color_3;
-        font-weight: 300;
-        margin: 0;
+        height: 60px;
+        object-fit: contain;
       }
     }
     &:hover {
@@ -44,12 +46,19 @@
 }
 
 @media (max-width: 767px) {
-  .skills-area {
-    .skills-content {
-      .row {
-        .col-md-3 {
-          flex: 0 0 auto;
-          width: 50%;
+  .skills {
+    .skill {
+      margin-bottom: 30px;
+      .skill-inner {
+        height: 130px;
+        border-radius: 65px;
+        i,
+        .letter {
+          font-size: 56px;
+        }
+        img {
+          width: 48px;
+          height: 48px;
         }
       }
     }

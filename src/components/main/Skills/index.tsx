@@ -1,82 +1,67 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./styles.scss";
 
 interface Skill {
   name: string;
-  percent: number;
   imageSrc?: string;
   icon?: string;
+  /** Fallback glyph for stacks without an icon, rendered at icon size. */
+  letter?: string;
 }
 
 const skills: Skill[] = [
-  {
-    name: "Typescript",
-    percent: 95,
-    imageSrc: "/assets/images/typescript.svg",
-  },
-  { name: "React", percent: 98, icon: "lab la-react" },
-  {
-    name: "NestJS",
-    percent: 90,
-    imageSrc: "/assets/images/nest.svg",
-  },
-  {
-    name: "MongoDB",
-    percent: 85,
-    imageSrc: "/assets/images/mongo.svg",
-  },
-  { name: "Figma", percent: 92, icon: "lab la-figma" },
-  // { name: "NodeJS", percent: 80, icon: "lab la-node-js" },
-
-  { name: "Git", percent: 92, icon: "lab la-git" },
-  { name: "Linux", percent: 85, icon: "lab la-linux" },
-  { name: "Docker", percent: 80, icon: "lab la-docker" },
+  { name: "React Native", icon: "lab la-react" },
+  { name: "TypeScript", imageSrc: "/assets/images/typescript.svg" },
+  { name: "Expo", imageSrc: "/assets/images/expo.svg" },
+  { name: "React", icon: "lab la-react" },
+  { name: "Reanimated", letter: "R" },
+  { name: "Node.js", icon: "lab la-node-js" },
+  { name: "NestJS", imageSrc: "/assets/images/nest.svg" },
+  { name: "MongoDB", imageSrc: "/assets/images/mongo.svg" },
+  { name: "Redis", imageSrc: "/assets/images/redis.svg" },
+  { name: "Docker", icon: "lab la-docker" },
+  { name: "Git", icon: "lab la-git" },
+  { name: "Linux", icon: "lab la-linux" },
 ];
 
+const animations = ["fade-right", "fade-up", "fade-down", "fade-left"];
+
 export default function Skills() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
   return (
     <section className="skills-area page-section scroll-to-page" id="skills">
       <div className="custom-container">
         <div className="skills-content content-width">
           <div className="section-header">
             <h4 className="subtitle scroll-animation" data-aos="fade-up">
-              <i className="las la-shapes"> </i> my skills
+              <i className="las la-shapes" aria-hidden="true"></i> Skills
             </h4>
-            <h1 className="scroll-animation" data-aos="fade-up">
-              My <span> Advantages </span>
-            </h1>
+            <h2 className="scroll-animation" data-aos="fade-up">
+              My <span>Stack</span>
+            </h2>
           </div>
           <div className="row skills text-center">
             {skills.map((skill, i) => (
               <div
                 key={skill.name}
-                className="col-md-3 scroll-animation"
-                data-aos={`fade-${
-                  i % 4 === 0
-                    ? "right"
-                    : i % 4 === 1
-                    ? "up"
-                    : i % 4 === 2
-                    ? "down"
-                    : "left"
-                }`}
+                className="col-md-3 col-6 scroll-animation"
+                data-aos={animations[i % animations.length]}
               >
                 <div className="skill">
                   <div className="skill-inner">
-                    {skill.imageSrc && (
-                      <img src={skill.imageSrc} alt="Laravel/PHP" />
+                    {skill.imageSrc ? (
+                      <img
+                        src={skill.imageSrc}
+                        alt={skill.name}
+                        loading="lazy"
+                      />
+                    ) : skill.letter ? (
+                      <span className="letter" aria-hidden="true">
+                        {skill.letter}
+                      </span>
+                    ) : (
+                      <i className={skill.icon} aria-hidden="true"></i>
                     )}
-                    <i className={skill.icon}> </i>
-                    <h1 className="percent"> {skill.percent}% </h1>
                   </div>
-                  <p className="name"> {skill.name} </p>
+                  <p className="name">{skill.name}</p>
                 </div>
               </div>
             ))}

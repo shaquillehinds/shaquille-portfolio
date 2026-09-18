@@ -1,3 +1,5 @@
+@use "/src/css/variables" as v;
+
 .about-area {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -5,10 +7,23 @@
     p {
       line-height: 30px;
       max-width: 610px;
+      margin-bottom: 20px;
     }
-    iframe {
-      width: 584px;
-      height: 330px;
+    .about-video {
+      margin: 40px 0 0;
+      max-width: 584px;
+      iframe {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        border-radius: 20px;
+      }
+      figcaption {
+        margin-top: 14px;
+        font-size: 14px;
+        color: v.$color_1;
+      }
     }
   }
 }
@@ -19,17 +34,14 @@
       p {
         max-width: 100%;
       }
+      .about-video {
+        max-width: 100%;
+      }
     }
   }
 }
 @media (max-width: 584px) {
   .about-area {
     padding-bottom: 0;
-    .about-content {
-      iframe {
-        width: 350px;
-        height: 200px;
-      }
-    }
   }
 }

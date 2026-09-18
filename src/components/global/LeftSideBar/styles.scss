@@ -70,6 +70,17 @@
   .theme-btn {
     width: 100%;
   }
+  .email-link {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: v.$color_1;
+    transition: 0.3s;
+    &:hover {
+      color: v.$color_3;
+    }
+  }
 }
 
 @media (max-width: 2000px) {

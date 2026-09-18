@@ -41,23 +41,26 @@
           margin-bottom: 28px;
           transition: 0.3s;
         }
-        h2 {
+        h3 {
           font-size: 24px;
           font-weight: 300;
           margin-bottom: 5px;
           color: v.$color_5;
-          a {
-            color: v.$color_5;
-            display: block;
+        }
+        .company {
+          font-size: 14px;
+          color: v.$color_5;
+          margin-bottom: 14px;
+          .location {
+            color: v.$color_1;
           }
         }
-        p {
-          font-size: 13px;
+        .summary {
+          font-size: 14px;
+          line-height: 24px;
           color: v.$color_1;
-          margin-bottom: 18px;
-          &:last-child {
-            margin-bottom: 0;
-          }
+          max-width: 640px;
+          margin-bottom: 0;
         }
         &:hover {
           &::before {

@@ -39,13 +39,15 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
-      a {
+      button {
         cursor: pointer;
         display: block;
         width: 30px;
         height: 30px;
         border-radius: 50%;
         position: relative;
+        border: none;
+        padding: 0;
         background: #28e98c;
         &::before {
           content: "";
@@ -85,7 +87,7 @@
           font-size: 14px;
         }
       }
-      a.clr-active {
+      button.clr-active {
         &::after {
           opacity: 1;
         }
@@ -193,6 +195,7 @@
   transition: 0.3s;
   background: #1f1f1f;
   z-index: 99;
+  padding: 0;
   span {
     width: 20px;
     display: block;
