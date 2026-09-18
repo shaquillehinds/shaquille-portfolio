@@ -4,20 +4,19 @@ interface Skill {
   name: string;
   imageSrc?: string;
   icon?: string;
+  /** Fallback glyph for stacks without an icon, rendered at icon size. */
+  letter?: string;
 }
 
 const skills: Skill[] = [
   { name: "React Native", icon: "lab la-react" },
   { name: "TypeScript", imageSrc: "/assets/images/typescript.svg" },
-  // TODO(shaq): add /public/assets/images/expo.svg
   { name: "Expo", imageSrc: "/assets/images/expo.svg" },
   { name: "React", icon: "lab la-react" },
-  // TODO(shaq): add /public/assets/images/reanimated.svg
-  { name: "Reanimated", imageSrc: "/assets/images/reanimated.svg" },
+  { name: "Reanimated", letter: "R" },
   { name: "Node.js", icon: "lab la-node-js" },
   { name: "NestJS", imageSrc: "/assets/images/nest.svg" },
   { name: "MongoDB", imageSrc: "/assets/images/mongo.svg" },
-  // TODO(shaq): add /public/assets/images/redis.svg
   { name: "Redis", imageSrc: "/assets/images/redis.svg" },
   { name: "Docker", icon: "lab la-docker" },
   { name: "Git", icon: "lab la-git" },
@@ -49,7 +48,15 @@ export default function Skills() {
                 <div className="skill">
                   <div className="skill-inner">
                     {skill.imageSrc ? (
-                      <img src={skill.imageSrc} alt={skill.name} loading="lazy" />
+                      <img
+                        src={skill.imageSrc}
+                        alt={skill.name}
+                        loading="lazy"
+                      />
+                    ) : skill.letter ? (
+                      <span className="letter" aria-hidden="true">
+                        {skill.letter}
+                      </span>
                     ) : (
                       <i className={skill.icon} aria-hidden="true"></i>
                     )}

@@ -16,10 +16,14 @@
       justify-content: center;
       margin-bottom: 20px;
       transition: 0.3s;
-      i {
+      i,
+      .letter {
         font-size: 75px;
         line-height: 1;
         color: v.$color_4;
+      }
+      .letter {
+        font-weight: 300;
       }
       img {
         display: block;
@@ -48,7 +52,8 @@
       .skill-inner {
         height: 130px;
         border-radius: 65px;
-        i {
+        i,
+        .letter {
           font-size: 56px;
         }
         img {
