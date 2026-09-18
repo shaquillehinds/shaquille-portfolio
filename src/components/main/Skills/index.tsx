@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./styles.scss";
 
 interface Skill {
@@ -36,11 +33,6 @@ const skills: Skill[] = [
 ];
 
 export default function Skills() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
   return (
     <section className="skills-area page-section scroll-to-page" id="skills">
       <div className="custom-container">

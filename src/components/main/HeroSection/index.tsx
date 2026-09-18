@@ -1,14 +1,6 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./styles.scss";
 
 export default function HeroSection() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
   return (
     <section className="hero-section page-section scroll-to-page" id="home">
       <div className="custom-container">

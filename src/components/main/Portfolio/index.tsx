@@ -1,10 +1,6 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Lightbox from "lightbox2";
-import "lightbox2/dist/css/lightbox.min.css";
+import { useCallback, useState } from "react";
+import ImageModal from "../../ui/ImageModal";
 import "./styles.scss";
-// import 'lightbox2/dist/js/lightbox.js';
 
 interface PortfolioItem {
   image: string;
@@ -59,17 +55,8 @@ const portfolioItems: PortfolioItem[] = [
 ];
 
 export default function Portfolio() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-    Lightbox.option({
-      resizeDuration: 200,
-      fadeDuration: 600,
-      imageFadeDuration: 600,
-      wrapAround: true,
-    });
-  }, []);
+  const [openItem, setOpenItem] = useState<PortfolioItem | null>(null);
+  const closeModal = useCallback(() => setOpenItem(null), []);
   return (
     <section
       className="portfolio-area page-section scroll-to-page"
@@ -104,9 +91,14 @@ export default function Portfolio() {
                         <img src={item.image} alt="Portfolio" />
                       </a>
                     ) : (
-                      <a href={item.image} data-lightbox="example-1">
+                      <button
+                        type="button"
+                        className="portfolio-zoom"
+                        aria-label={`View ${item.name} screenshot`}
+                        onClick={() => setOpenItem(item)}
+                      >
                         <img src={item.image} alt="Portfolio" />
-                      </a>
+                      </button>
                     )}
                     <ul className="portfolio-categories">
                       {item.categories.map((category) => (
@@ -127,6 +119,13 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
+      {openItem && (
+        <ImageModal
+          src={openItem.image}
+          alt={`${openItem.name} screenshot`}
+          onClose={closeModal}
+        />
+      )}
     </section>
   );
 }

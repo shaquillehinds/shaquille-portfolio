@@ -1,14 +1,6 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./styles.scss";
 
 export default function About() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
   return (
     <section className="about-area page-section scroll-to-page" id="about">
       <div className="custom-container">

@@ -5,10 +5,6 @@ import Skills from "../main/Skills";
 import Portfolio from "../main/Portfolio";
 import LeftSideBar from "../global/LeftSideBar";
 import HeroSection from "../main/HeroSection";
-// import Testimonials from "../main/Testimonials";
-// import Pricing from "../main/Pricing";
-// import Contact from "../main/Contact";
-// import ClientLogos from "../main/ClientLogos";
 import "./styles.scss";
 
 export default function Main() {
@@ -23,10 +19,6 @@ export default function Main() {
           <Service />
           <Skills />
           <Portfolio />
-          {/* <Testimonials />
-          <ClientLogos />
-          <Pricing />
-          <Contact /> */}
         </div>
       </div>
     </main>

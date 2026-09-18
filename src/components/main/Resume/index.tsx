@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./styles.scss";
 
 interface Experience {
@@ -36,11 +33,6 @@ const experiences: Experience[] = [
 ];
 
 export default function Resume() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
   return (
     <section className="resume-area page-section scroll-to-page" id="resume">
       <div className="custom-container">

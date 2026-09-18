@@ -1,14 +1,6 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./styles.scss";
 
 export default function Contact() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1300,
-    });
-  }, []);
   return (
     <section className="contact-area page-section scroll-content" id="contact">
       <div className="custom-container">

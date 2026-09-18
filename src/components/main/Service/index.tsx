@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./styles.scss";
 
 interface Specialization {
@@ -32,11 +29,6 @@ const specializations: Specialization[] = [
 ];
 
 export default function Service() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
   return (
     <section
       className="services-area page-section scroll-to-page"
